@@ -1,3 +1,3 @@
-import React, { createContext } from 'react';
-export const FirstContext = createContext();
-export const SecondContext = createContext();
+import  { createContext } from 'react';
+export const FirstContext = createContext(undefined);
+export const SecondContext = createContext(undefined);
