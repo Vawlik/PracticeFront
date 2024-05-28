@@ -1,0 +1,7 @@
+.component {
+    background-color: darkgreen;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: left;
+}
