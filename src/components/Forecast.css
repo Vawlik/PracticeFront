@@ -1,0 +1,42 @@
+.forecast {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.forecast h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.forecast-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.forecast-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 180px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-item p {
+    margin: 5px 0;
+}
+
+.forecast-icon {
+    font-size: 48px;
+}
+
+.forecast-temp {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4CAF50;
+}
