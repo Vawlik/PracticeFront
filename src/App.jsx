@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Weather from './components/Weather';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
 const App = () => {
@@ -8,12 +10,10 @@ const App = () => {
     const [weather, setWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
 
     const handleSearch = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setError(null);
 
         try {
             const apiKey = '9f6650c297fba7c69df252fcfb7a058e'; // Замените на ваш API-ключ
@@ -38,7 +38,15 @@ const App = () => {
             setForecast(forecastData);
 
         } catch (error) {
-            setError('Город не найден');
+            toast.error('Город не найден, проверьте правильность его написания!', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         } finally {
             setLoading(false);
         }
@@ -57,7 +65,7 @@ const App = () => {
                 <button type="submit">Поиск</button>
             </form>
             {loading && <p>Загрузка...</p>}
-            {error && <p>{error}</p>}
+            <ToastContainer />
             {weather && <Weather weather={weather} forecast={forecast} />}
         </div>
     );
